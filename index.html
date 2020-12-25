@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="css/foundation.css">
 	<link rel="stylesheet" href="css/flickity.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/custom.css">
 </head>
 
 <body>
@@ -331,22 +333,38 @@
 				</div>
 
 				<div class="grid-x grid-padding-x align-center">
-					<div class="cell small-12 large-10 xlarge-8 xxxxlarge-6">
-						<p>
-							Khách Hàng vui lòng để lại thông tin Họ tên, ngày tháng năm sinh, và giải pháp phù hợp. Chỗ này có thể làm
-							cái form đăng ký, cho khách hàng điền và ăn nút GỬI THÔNG TIN được hok
-						</p>
-
-						<p class="last m-bottom-0">
-							<a class="button" href="mailto:hannumber@gmail.com">hannumber@gmail.com</a>
-						</p>
-					</div>
+					<form method="POST"
+						action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSebJ6Kau4GDpFF5edFTlKv7XtodJzyQPp0afIONX6V-WzoyQw/formResponse"
+						id="contact-form">
+						<div class="w-full flex flex-row">
+							<div class="wrapper w-full sm:w-1/2 flex flex-row flex-wrap">
+								<div class="form-input w-full sm:w-2/3 sm:ml-auto mb-3">
+									<input type="text" name="entry.2119424584" class="border px-5 py-3 w-full border rounded"
+										placeholder="Họ và tên">
+								</div>
+								<div class="form-input w-full sm:w-2/3 sm:ml-auto mb-3">
+									<input type="text" name="entry.937410615" class="border px-5 py-3 w-full border rounded "
+										placeholder="Ngày sinh">
+								</div>
+								<div class="form-input w-full sm:w-2/3 sm:ml-auto mb-3">
+									<input type="tel" name="entry.31310190" class="border px-5 py-3 w-full border rounded "
+										inputmode="tel" placeholder="Số điện thoại">
+								</div>
+								<button data-sitekey="6LdXjxQaAAAAAMc0m60YMthVPboZHrQPmjqWLxqF" data-callback='onSubmit'
+									data-action='submit'
+									class="g-recaptcha btn-send-contact outline-none transition duration-500 w-full sm:w-2/3 text-white hover:shadow-xl rounded px-5 py-3 sm:ml-auto ">
+									<span class="font-bold">Gửi</span>
+								</button>
+							</div>
+							<div class="w-1/2 hidden sm:flex justify-center items-center">
+								<a href="tel:+84974747360">
+									<img height="200px" width="200px" src="img/phone-button.svg" alt="Telefon-Button">
+								</a>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
-
-			<a id="phone-button" href="tel:+84974747360">
-				<img src="img/phone-button.svg" alt="Telefon-Button">
-			</a>
 		</div>
 
 		<div id="footer" class="section">
@@ -420,6 +438,13 @@
 	<script src="js/smooth-scroll.polyfills.min.js"></script>
 	<script src="js/flickity.pkgd.min.js"></script>
 	<script src="js/app.js?v=20200604154447"></script>
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<script>
+		var fo = document.getElementById("contact-form");
+		function onSubmit(token) {
+			fo.submit();
+		}
+	</script>
 </body>
 
 </html>
