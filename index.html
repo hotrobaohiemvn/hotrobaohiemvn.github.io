@@ -334,6 +334,7 @@
 
 				<div class="grid-x grid-padding-x align-center">
 					<form method="POST"
+						target="hiddenFrame"
 						action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSebJ6Kau4GDpFF5edFTlKv7XtodJzyQPp0afIONX6V-WzoyQw/formResponse"
 						id="contact-form">
 						<div class="w-full flex flex-row">
@@ -356,6 +357,7 @@
 									<span class="font-bold">Gửi</span>
 								</button>
 							</div>
+							<iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
 							<div class="w-1/2 hidden sm:flex justify-center items-center">
 								<a href="tel:+84974747360">
 									<img height="200px" width="200px" src="img/phone-button.svg" alt="Telefon-Button">
@@ -439,10 +441,18 @@
 	<script src="js/flickity.pkgd.min.js"></script>
 	<script src="js/app.js?v=20200604154447"></script>
 	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script>
-		var fo = document.getElementById("contact-form");
+		var fo = $("#contact-form");
 		function onSubmit(token) {
 			fo.submit();
+			fo.reset();
+			swal({
+				title: "Cảm ơn !",
+				text: "Tôi sẽ liên lạc với bạn trong thời gian sớm nhất.",
+				icon: "success",
+				button: "Đóng",
+			});
 		}
 	</script>
 </body>
