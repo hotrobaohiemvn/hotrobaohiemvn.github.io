@@ -445,14 +445,14 @@
 	<script>
 		var fo = $("#contact-form");
 		function onSubmit(token) {
-			fo.submit();
-			fo.reset();
 			swal({
 				title: "Cảm ơn !",
 				text: "Tôi sẽ liên lạc với bạn trong thời gian sớm nhất.",
 				icon: "success",
 				button: "Đóng",
 			});
+			fo.submit();
+			fo.reset();
 		}
 	</script>
 </body>
